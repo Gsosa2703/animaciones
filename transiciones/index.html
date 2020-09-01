@@ -6,26 +6,61 @@
     <title>Transiciones CSS</title>
 </head>
 <style>
+    body{
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
     .pelota{
         width: 100px;
         height: 100px;
         border-radius: 50%;
-        background-color: red;
         /* transition-property: width, height; */
         /* transition-duration: 1s; */
         /* transition-delay: 1s; */
         /* transition-timing-function: ease; */
-        transition: width 1s  ease;
-    
+        transition:  1s ;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
     }
-    .pelota:hover{
-        width: 200px;
-        height: 200px;
-       
+ 
+    .canasta:hover .pelota.a{
+        left: calc(50% - 100px);
+
+    }
+    .canasta:hover .pelota.b{
+        right: calc(50% - 100px);
+
+    }
+    .pelota.a{
+        background: red;
+        left: 0;
+
+    }
+    .pelota.b{
+        background: blue;
+        right: 0;
+
+    }
+    .canasta{
+        border: solid 1px red;
+        position: relative;
+        height: 100px ;
+        width: 100%;
+        /* transform: rotar | sesgar | posicion | tamano; */
+        transform: rotate(5deg) skew(10deg) translate(100px) scale(1.5);
     }
 </style>
 <body>
-    <div class="pelota b"></div>
+<div class="canasta">
+    <div class="pelota a ">Hola</div>
+    <div class="pelota b">Mundo</div>
+</div>
+
     
 </body>
 </html>
