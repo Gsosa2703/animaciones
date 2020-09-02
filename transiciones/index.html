@@ -12,18 +12,35 @@
         align-items: center;
         justify-content: center;
         color: white;
-        font-family: Arial, Helvetica, sans-serif
+        font-family: Arial, Helvetica, sans-serif;
 
 
     }
 
     .container{
         border: 1px solid red;
+
     }
 
     .container:hover .cuadrado{
-        /* transform: skew(x,y); */
-        transform: skew(10deg, 10deg);
+        /* transform-origin: x y; */
+        /* transform-origin: 50% 50%; */
+
+        /*
+        TRANSFORM TO EJE X
+        transform-origin: top ;
+        transform-origin: bottom ;
+        transform: rotateX(45deg);*/
+         /*
+        TRANSFORM TO EJE Y
+        transform-origin: left ;
+        transform-origin: 0% 50%; 
+        transform-origin: right ;
+        transform-origin: 100% 50%; 
+
+        transform: rotateY(45deg);*/
+
+        transform: rotateZ(-45deg);
 
     }
 
@@ -33,6 +50,8 @@
         background: #7dc900;
         margin: 20px;
         transition: .3s;
+        transform-origin: right top;
+
     }
    
 </style>
