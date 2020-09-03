@@ -7,20 +7,216 @@
 </head>
 <style>
 
-    body{
+body{
+    background-color: #3bd2dd;
+    animation-name: oscurecer ;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+    .container{
         display: flex;
         justify-content: center;
         align-items: center;
+       
     }
-    .circulo{
-        border: solid 3px slateblue ;
-        width: 400px;
-        height: 400px;
+    .sol{
+        width: 300px;
+        height: 300px;
         border-radius: 50%;
-    }
+        background: #fbff2c;
+        box-shadow: -1px 6px 55px 4px rgba(229,255,33,1);     
+   }
+   .moon-sun{
+       width: 100vw;
+       position: relative;
+       display: flex;
+    justify-content: center;
+   }
+   .luna{
+       position: absolute;
+       top: 0;
+       left: 0;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: black;
+        animation-name: eclipse, oscurecer;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: linear;
+   }
+   .nube::before {
+       height: 150px;
+       width: 150px;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    top: -40px;
+    left: 30px;
+    animation-name: oscurecerNubes;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: linear;
+
+}
+.nube::after {
+       height: 150px;
+       width: 150px;
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    top: -40px;
+    right: 30px;
+    animation-name: oscurecerNubes;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: linear;
+
+}
+
+   .nube{
+        width: 300px;
+        height: 100px;
+        background: white;
+        position: absolute;
+        border-radius: 50px;
+        animation-name: oscurecerNubes;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: linear;
+
+   }
+   .container{
+       position: relative;
+   }
+
+   .nube1{
+       top: -100px;
+       right: 100px;
+   }
+
+   .nube2{
+       top: -100px;
+       left: 100px;
+
+   }
+   .nube3{
+       bottom: -200px;
+       left: 400px;
+
+   }
+   .nube4{
+       bottom: -200px;
+       right: 400px;
+
+   }
+
+   @keyframes eclipse {
+       from {
+           transform: translate(0);
+       }
+       45%, 55%{
+        transform: translate(calc(50vw - 148px));
+        } 
+       to{
+           transform: translate(calc(100vw - 300px));
+
+       }
+   }
+
+   @keyframes oscurecer{
+    from, 10%, 90%, 100%{
+    background-color: #7ec0ee;
+  }
+  15%, 85%{
+    background-color: #71acd6;
+  }
+  20%, 80%{
+    background-color: #5886a6;
+  }
+  25%, 75%{
+    background-color: #4b738e;
+  }
+  30%, 70%{
+    background-color: #3f6077;
+  }
+  35%, 65%{
+    background-color: #324c5f;
+  }
+  40%, 60%{
+    background-color: #253947;
+  }
+  45%, 55%{
+    background-color: #000;
+  }
+  48%, 52%{
+    background-color: #000;
+  }
+  50%{
+    background-color: #000;
+  }
+         
+   }
+   
+   @keyframes oscurecerNubes {
+    from, 10%, 90%, 100%{
+    background-color: #ffffff;
+  }
+  15%, 85%{
+    background-color: #e5e5e5;
+  }
+  20%, 80%{
+    background-color: #ccc;
+  }
+  25%, 75%{
+    background-color: #999999;
+  }
+  30%, 70%{
+    background-color: #7f7f7f;
+  }
+  35%, 65%{
+    background-color: #666;
+  }
+  40%, 60%{
+    background-color: #4c4c4c;
+  }
+  45%, 55%{
+    background-color: #000;
+  }
+  48%, 52%{
+    background-color: #000;
+  }
+  50%{
+    background-color: #000;
+  }
+         
+     
+
+   }
 </style>
 <body>
-    <div class="circulo"></div>
+    <div class="moon-sun">
+        <div class="sol"></div>
+            <div class="luna"></div>
+    </div>
+
+    <div class="container">
+            <div class="nube nube1">
+            </div>
+            <div class="nube nube2"></div>
+
+            <div class="nube nube3"></div>
+            <div class="nube nube4"></div>
+    </div>
+
 
 </body>
 </html>
